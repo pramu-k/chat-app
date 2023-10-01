@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {NonNullableFormBuilder, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {HotToastService} from "@ngneat/hot-toast";
+import {AuthenticationService} from "../../services/authentication.service";
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent {
   });
 
   constructor(
-    private authService: AuthService,
+    private authService: AuthenticationService,
     private toast: HotToastService,
     private router: Router,
     private fb: NonNullableFormBuilder

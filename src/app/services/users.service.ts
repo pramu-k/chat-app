@@ -16,20 +16,20 @@ import {
   providedIn: 'root'
 })
 export class UsersService {
-  constructor(private fireStore=Firestore, private authService: AuthenticationService) {}
+  constructor(/*private fireStore = Firestore,*/ private authService: AuthenticationService) {}
 
-  get currentUserProfile$(): Observable<ProfileUser | null> {
+/*  get currentUserProfile$(): Observable<ProfileUser | null> {
     return this.authService.currentUser$.pipe(
       switchMap((user) => {
         if (!user?.uid) {
           return of(null);
         }
 
-        const ref = doc(this.fireStore, 'users', user?.uid);
+        const ref = doc(this.fireStore, '/users', user?.uid);
         return docData(ref) as Observable<ProfileUser>;
       })
     );
-  }
+  }*/
 
 
 }
